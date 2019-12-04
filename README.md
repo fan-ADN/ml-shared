@@ -12,10 +12,11 @@ pip install -U sdist/ml-shared-*.zip
 
 大まかに分けて, 以下の4つ
 
-* `data`: データの取得関係. ほとんどは TD API のラッパーになりそう
-* `feature`:  データの特徴量行列への変換, あるいは特徴量変換
-* `model`: 予測モデル関係
-* `evaluation`: 予測モデルの事後評価. 損失の計算やグラフ描画など
+* [`data`](ml_shared/evaluation/README.md): データの取得関係. ほとんどは TD API のラッパーになりそう
+
+* [`feature`](ml_shared/evaluation/README.md):  データの特徴量行列への変換, あるいは特徴量変換
+* [`model`](ml_shared/model/README.md): 予測モデル関係
+* [`evaluation`](ml_shared/evaluation/README.md): 予測モデルの事後評価. 損失の計算やグラフ描画など
 
 ```python
 from ml_shared.data import *
