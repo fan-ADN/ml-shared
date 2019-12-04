@@ -5,7 +5,7 @@
 
 ```bash
 git clone hogehoge; cd hogehoge
-pip install -U sdist/ml-shared-*.zip
+pip install -U dist/ml_shared-*.zip
 ```
 
 # 使い方
