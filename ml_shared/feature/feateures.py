@@ -19,8 +19,8 @@ def hivemall2csr_mat(td_job, feature_list={}, td_label_index=0, td_feature_index
     :param td_label_index: integer. ラベル列の位置. デフォルト0
     :param td_feature_index: integer. 特徴量列の位置. デフォルト1
     :param extra_cols: array-like. それ以外の取得したい列. index または str.
-    :return: tuple of nunpy.ndarray(label),
-                      scipy.sparse.csr_matrix(feature matrix),
+    :return: tuple of scipy.sparse.csr_matrix(feature matrix),
+                      nunpy.ndarray(label),
                       dict(feature name: feature type),
                       pandas.DataFrame(extra columns)
     TODO: ラベル列の指定だけ分けているのはダサい?
@@ -72,10 +72,10 @@ def hivemall2csr_mat(td_job, feature_list={}, td_label_index=0, td_feature_index
                     csr_col_index.append(index)
         extra_data.append([x for i, x in enumerate(td_row_values) if i in extra_data_index])
     extra_data = pd.DataFrame(extra_data, columns=extra_data_columns)
-    return (np.array(label),
-            sp.sparse.csr_matrix((csr_data, (csr_row_index, csr_col_index)),
+    return (sp.sparse.csr_matrix((csr_data, (csr_row_index, csr_col_index)),
                                  shape=(csr_row_index[-1] + 1, len(feature_list)),  # shape 指定したほうが少し速くなる?
                                  dtype=float),
+            np.array(label),
             feature_list,
             extra_data
             )
