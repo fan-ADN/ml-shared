@@ -39,6 +39,7 @@ def entropy(p):
     :param p: array-like.
     :return: float.
     """
+    p = np.array(p).mean()
     return - (p * np.log(p) + (1 - p) * np.log(1 - p))
 
 
@@ -52,8 +53,7 @@ def normalized_entropy(label, prob):
     :param prob: array-like.
     :return: float/
     """
-    mean_p = np.mean(label)
-    return log_loss(label, prob) / entropy(mean_p)
+    return log_loss(label, prob) / entropy(prob)
 
 
 def normalized_log_loss(label, prob):
@@ -69,7 +69,7 @@ def normalized_log_loss(label, prob):
     References:
     Lefortier, Damien, Anthony Truchet, and Maarten de Rijke. 2015. “Sources of Variability in Large-Scale Machine Learning Systems.” In Machine Learning Systems (NIPS 2015 Workshop). http://learningsys.org/2015/papers.html.
     """
-    return 1 - log_loss(label, prob) / entropy(mp.mean(prob))
+    return 1 - log_loss(label, prob) / entropy(prob)
 
 
 def expected_calibration_error(y_true, y_pred, m=10,
@@ -132,7 +132,7 @@ def print_metrics_2(y_train, y_test, p_train, p_test):
     print('AUC: {0[0]:.4f}/{0[1]:.4f}, logloss: {1[0]:.4f}/{1[1]:.4f}, NE: {2[0]:.4f}/{2[1]:.4f}'.format(
         *[(f(y_train, p_train), f(y_test, p_test)) for f in [roc_auc_score, log_loss, normalized_entropy]]
     ))
-    print('naive logloss: {:.4f}/{:.4f}'.format(entropy(y_train.mean()), entropy(y_test.mean())))
+    print('naive logloss: {:.4f}/{:.4f}'.format(entropy(y_train), entropy(y_test)))
     print('train click/exp: {:.0f}/{:.0f} = {:.4f}\n test click/exp: {:.0f}/{:.0f} = {:.4f}'.format(
         y_train.sum(), p_train.sum(),
         y_train.sum() / p_train.sum(),
@@ -168,7 +168,7 @@ def print_metrics(label_list, pred_list, names=None, metrics=None):
                 ('Expecred click', lambda y, p: p.mean()),
                 ('AUC', roc_auc_score),
                 ('log loss', log_loss),
-                ('mean entropy', lambda y, p: entropy(y.mean())),
+                ('mean entropy', lambda y, p: entropy(y)),
                 ('NE', normalized_entropy),
                 ('ECE', expected_calibration_error),
                 # ('ICI', integrated_calibration_index)  # 10000 件超えるとめちゃくちゃ遅い
