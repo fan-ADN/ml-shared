@@ -11,7 +11,7 @@ if __name__ == '__main__':
         author='s_katagiri',
         author_email='s_katagiri@fancs.com',
         description='',
-        packages=find_packages(include='ml_shared'),
+        packages=find_packages(),
         # packages=['ml_shared', 'ml_shared.data', 'ml_shared.model', 'ml_shared.feature', 'ml_shared.evaluation'],
         python_requires='>3.0, <4',
         install_requires=[
