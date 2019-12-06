@@ -5,7 +5,7 @@ from pathlib import Path
 if __name__ == '__main__':
     setup(
         name='ml_shared',
-        version='0.1',
+        version='0.1.1',
         url='https://github.com/fan-ADN/ml-shared',
         license='Confidential',
         author='s_katagiri',
@@ -20,7 +20,8 @@ if __name__ == '__main__':
             'pandas>=0.24',
             'matplotlib>=3.1.1',
             'plotnine>=0.6.0',
-            'scikit-learn>=0.21.2'
+            'scikit-learn>=0.21.2',
+            'fastFM>=0.2.11'
         ],
         classifiers=[
             'Programming Language :: Python :: 3',
