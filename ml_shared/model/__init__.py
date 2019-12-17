@@ -1,1 +1,1 @@
-from ml_shared.model.fmwrapper import (FastFMClassifier, FastFMSgdClassifier)
+from ml_shared.model.fmwrapper import (FastFMClassifier)
