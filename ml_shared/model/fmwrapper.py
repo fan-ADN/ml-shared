@@ -6,7 +6,7 @@ import scipy as sp
 from sklearn.base import BaseEstimator, ClassifierMixin, clone
 from sklearn.utils.validation import check_is_fitted
 from sklearn.utils import check_array, safe_indexing
-from sklearn.preprocessing import FunctionTransformerF
+from sklearn.preprocessing import FunctionTransformer
 
 class FastFMClassifier(als.FMClassification):
     def __init__self(self, *args, **kwargs):
