@@ -2,7 +2,7 @@ import numpy as np
 from fastFM import als, sgd
 
 class FastFMClassifier(als.FMClassification):
-    def __init__self(self, *args, **kwargs):
+    def __init__(self, method='als', *args, **kwargs):
         super().__init__(*args, **kwargs)
 
     def fit(self, X, y):
@@ -30,4 +30,4 @@ class FastFMSgdClassifier(sgd.FMClassification):
 
     def predict_proba(self, X):
         p = super().predict_proba(X)
-        return np.column_stack((1-p, p))
+        return np.column_stack((1 - p, p))
