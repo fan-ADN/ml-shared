@@ -1,11 +1,10 @@
 from setuptools import setup, find_packages
-from pathlib import Path
 
 
 if __name__ == '__main__':
     setup(
         name='ml_shared',
-        version='0.1.1',
+        version='0.1.2',
         url='https://github.com/fan-ADN/ml-shared',
         license='Confidential',
         author='s_katagiri',

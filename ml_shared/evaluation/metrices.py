@@ -67,7 +67,9 @@ def normalized_log_loss(label, prob):
     :return: float
 
     References:
-    Lefortier, Damien, Anthony Truchet, and Maarten de Rijke. 2015. “Sources of Variability in Large-Scale Machine Learning Systems.” In Machine Learning Systems (NIPS 2015 Workshop). http://learningsys.org/2015/papers.html.
+    Lefortier, Damien, Anthony Truchet, and Maarten de Rijke. 2015. ,
+    “Sources of Variability in Large-Scale Machine Learning Systems.,”
+    In Machine Learning Systems (NIPS 2015 Workshop). http://learningsys.org/2015/papers.html.
     """
     return 1 - log_loss(label, prob) / entropy(prob)
 
@@ -76,7 +78,9 @@ def expected_calibration_error(y_true, y_pred, m=10,
                                strategy='quantile', weight=None, **args):
     """
     期待カリブレーション誤差を計算する関数.
-    Naeini, Mahdi Pakdaman, Gregory F. Cooper, and Milos Hauskrecht. (2015) “_Obtaining Well Calibrated Probabilities Using Bayesian Binning_.” in Proceedings of the AAAI Conference on Artificial Intelligence, 2901–7, PMID: 25927013
+    Naeini, Mahdi Pakdaman, Gregory F. Cooper, and Milos Hauskrecht. (2015),
+    “_Obtaining Well Calibrated Probabilities Using Bayesian Binning_.,”
+    in Proceedings of the AAAI Conference on Artificial Intelligence, 2901–7, PMID: 25927013
     strategy='quantile': グループ分割の方法. デフォルトでは等間隔ではなく分位数
     m=10: グループ数 (ビン数).
     weight=None: 平均誤差計算時の, グループごとの重み, デフォルトでは必要なし.
@@ -108,7 +112,9 @@ def integrated_calibration_index(y, p, **args):
     -------
     TODO: statsmodels.nonparametric.smoothers_lowess.lowess が遅い
     References:
-    P. C. Austin and E. W. Steyerberg (2019) “The Integrated Calibration Index (ICI) and related metrics for quantifying the calibration of logistic regression models,” Statistics in Medicine
+    P. C. Austin and E. W. Steyerberg (2019),
+    “The Integrated Calibration Index (ICI) and related metrics for quantifying the calibration of logistic regression models,”
+    Statistics in Medicine
     """
     smoothed = lowess(y, p, **args)
     return mean_absolute_error(*smoothed.transpose())
@@ -182,7 +188,8 @@ def plot_ROC(label_list, pred_list, names=None, **args):
     複数の ROC 曲線をプロットする 
     :param: label_list: 正解ラベルリストの配列. [(y1, y2, ...), (y1, y2, ...)]  のようにして与える,  pred_list に対応させる
     :param: pred_list: 予測確率リストの配列. label_list と同じ長さにすること
-    :param: names=None: モデルの名称. None または同じ長さにすること. 指定しない場合, ラベルの組が 2~3  ならば ['train', 'valid', 'test'] を与える. 3より多い場合は通し番号にする.
+    :param: names=None: モデルの名称. None または同じ長さにすること. 指定しない場合,
+            ラベルの組が 2~3  ならば ['train', 'valid', 'test'] を与える. 3より多い場合は通し番号にする.
     :param args: sklearn.metrics.roc_curve に与えるパラメータ
     :return: plotnine オブジェクト
     """
