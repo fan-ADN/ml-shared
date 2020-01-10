@@ -53,7 +53,7 @@ def normalized_entropy(label, prob):
     :param prob: array-like.
     :return: float/
     """
-    return log_loss(label, prob) / entropy(prob)
+    return log_loss(label, prob) / entropy(label)
 
 
 def normalized_log_loss(label, prob):
