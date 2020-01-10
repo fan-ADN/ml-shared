@@ -71,7 +71,7 @@ def normalized_log_loss(label, prob):
     “Sources of Variability in Large-Scale Machine Learning Systems.,”
     In Machine Learning Systems (NIPS 2015 Workshop). http://learningsys.org/2015/papers.html.
     """
-    return 1 - log_loss(label, prob) / entropy(prob)
+    return 1 - log_loss(label, prob) / entropy(label)
 
 
 def expected_calibration_error(y_true, y_pred, m=10,
