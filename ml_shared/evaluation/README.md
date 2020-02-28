@@ -15,7 +15,7 @@ from ml-shared.evaluation import *
 不均衡データで分類モデルを扱う際のバランス調整用
 calibrate probability estimates for imbalanced data, suggested by the followings:
 
-* Yui, T. 『[Over-/Under-samplingをして学習した2クラス分類器の予測確率を調整する式](https://takuti.me/note/adjusting-for-oversampling-and-undersampling/)』, 2017
+* Kitazawa, T. 『[Over-/Under-samplingをして学習した2クラス分類器の予測確率を調整する式](https://takuti.me/note/adjusting-for-oversampling-and-undersampling/)』, 2017
 * He, X. et al., “Practical Lessons from Predicting Clicks on Ads at Facebook,” in Proceedings of 20th ACM SIGKDD Conference on Knowledge Discovery and Data Mining - ADKDD’14, 2014, pp. 1–9. DOI: [10.1145/2648584.2648589](https://doi.org/10.1145/2648584.2648589)
 * Dal Pozzolo, A., O. Caelen, and G. Bontempi, “When is Undersampling Effective in Unbalanced Classification Tasks?,” in Proceedings of the 2015th European Conference on Machine Learning and Knowledge Discovery in Databases, Porto, Portugal, 2015, vol. 9284, pp. 200–215. DOI: [10.1007/978-3-319-23528-8_13](https://doi.org/10.1007/978-3-319-23528-8_13)
 
