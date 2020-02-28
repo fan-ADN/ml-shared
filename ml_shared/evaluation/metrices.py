@@ -24,7 +24,7 @@ def calibrate_imbalanceness(p, pos_rate=1.0, neg_rate=1.0):
     不均衡サンプリング割合に応じて予測確率 p を修正するやつ
     結局逆数を取れば同じだけどケアレスミス回避のため pos/neg それぞれの引数を用意した
     :param p: array-like.
-    :param pos_rate: float. 正例のサンプリング率。 サンプリング率とは (事後正例比率)/(事前正例比率) oversampling なら >1, down なら <1. 0 より大きい値とすること
+    :param pos_rate: float. 正例のサンプリング倍率。 サンプリング倍率とはリサンプリング前後で件数が何倍になったか, つまり (事後正例数)/(事前正例数). oversampling なら >1, down なら <1. 0 より大きい値とすること
     :param neg_rate: float. 負例のサンプリング率。同上。
     :return:
     """
