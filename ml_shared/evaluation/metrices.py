@@ -45,9 +45,10 @@ def entropy(p):
 
 def normalized_entropy(label, prob):
     """
-    Normalized cross entropy (NE)
+    正規化クロスエントロピー(NE)を計算する
+    compute the Normalized cross entropy (NE)
     NE:= (log loss)/(mean entropy)
-    1がベンチマークの点であり, 値が小さいほど好ましい.
+    1基準であり, 値が**小さい**ほど当てはまりが良い.
 
     :param label: array-like.
     :param prob: array-like.
@@ -56,11 +57,43 @@ def normalized_entropy(label, prob):
     return log_loss(label, prob) / entropy(label)
 
 
+def relative_information_gain(label, prob):
+    """
+    相対情報ゲイン(RIG)を計算する
+    compute the relative information gain (RIG)
+     1 - log-loss/mean-entropy
+    ゼロが基準であり, 値が**大きい**ほど当てはまりが良い
+    Args:
+        label: array-like.
+        prob: array-like.
+
+    Returns: float
+    """
+    return 1 - log_loss(label, prob)/entropy(label)
+
+
+def negative_relative_information_gain(label, prob):
+    """
+    負の相対情報ゲイン(RIG)を計算する.
+    log-loss/mean-entropy - 1
+    = NE - 1
+    ゼロが基準であり, 値が**小さい**ほど当てはまりが良い
+    Args:
+        label:
+        prob:
+
+    Returns:
+
+    """
+    return log_loss(label, prob)/entropy(label) - 1
+
+
 def normalized_log_loss(label, prob):
     """
     正規化対数損失 (normalized log loss; NLL) の計算.
     NLL := 1 - (log loss) / (mean entropy)
-    NE と似ているが, ゼロが基準. 小さい方が望ましい.
+    ゼロが基準, 値が**大きい**ほど当てはまりが良い
+    RIGと同じ
 
     :param label: array-like.
     :param prob: array-like.

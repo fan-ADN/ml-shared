@@ -1,6 +1,6 @@
 # Utilities for model evaluation
 
-モデル評価に使える便利関数. 主にカリブレーション関係:
+モデル評価に使える便利関数. 現状は主に分類・不均衡データでよく使うものを用意した.
 
 ## Usage
 
@@ -20,8 +20,13 @@ calibrate probability estimates for imbalanced data, suggested by the followings
 * Dal Pozzolo, A., O. Caelen, and G. Bontempi, “When is Undersampling Effective in Unbalanced Classification Tasks?,” in Proceedings of the 2015th European Conference on Machine Learning and Knowledge Discovery in Databases, Porto, Portugal, 2015, vol. 9284, pp. 200–215. DOI: [10.1007/978-3-319-23528-8_13](https://doi.org/10.1007/978-3-319-23528-8_13)
 
 
-### normalized_entropy 
-正規化エントロピー (NE; Normalized cross Entropy) の計算
+### normalized_entropy, relative_information_gain
+それぞれ正規化エントロピー (NE; Normalized cross Entropy), 相対情報ゲイン(RIG) の計算
+
+NE = (log-loss)/(mean-entrioy)
+
+RIG = 1 - (log-loss)/(mean-entropy)
+
 calculate the normalized (cross) entropy suggested by:
 
 * He, X. et al., “Practical Lessons from Predicting Clicks on Ads at Facebook,” in Proceedings of 20th ACM SIGKDD Conference on Knowledge Discovery and Data Mining - ADKDD’14, 2014, pp. 1–9. DOI: [10.1145/2648584.2648589](https://doi.org/10.1145/2648584.2648589)
@@ -29,12 +34,16 @@ calculate the normalized (cross) entropy suggested by:
 
 
 ### normalized_log_loss
-正規化対数損失の計算
+正規化対数損失の計算. 定義はRIGと全く同じ.
+
 Lefortier, Damien, Anthony Truchet, and Maarten de Rijke. 2015. “Sources of Variability in Large-Scale Machine Learning Systems.” In Machine Learning Systems (NIPS 2015 Workshop). http://learningsys.org/2015/papers.html.
 
 
 ### expected_calibration_error
 期待カリブレーション誤差 (ECE) の計算
+
+注: 現状はラベル不均衡が極端なデータでの計算を想定していない
+
 calculate Hozmer-Lemeshaw-statistics (calibration curve) -based metric, inspired by:
 
 * Guo, Chuan, Geoff Pleiss, Yu Sun, and Kilian Q. Weinberger. (2017) “_On Calibration of Modern Neural Networks_.” In Proceedings of the 34th International Conference on Machine Learning, 70:1321–30. Sydney, NSW, Australia. URL: https://dl.acm.org/citation.cfm?id=3305518, arXiv: [1706.04599](http://arxiv.org/abs/1706.04599).
@@ -42,6 +51,9 @@ calculate Hozmer-Lemeshaw-statistics (calibration curve) -based metric, inspired
 
 ### integrated_calibration_index
 積分カリブレーション指数 (ICI) の計算
+
+注: 計算時間が非常にかかる. 要修正.
+
 calculate integrated calibration index (ICI) suggested by:
 
 * P. C. Austin and E. W. Steyerberg. (2019) “_The Integrated Calibration Index (ICI) and related metrics for quantifying the calibration of logistic regression models_,” Statistics in Medicine. DOI: [10.1002/sim.8281](https://doi.org/10.1002/sim.8281)
