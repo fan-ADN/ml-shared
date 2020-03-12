@@ -55,7 +55,7 @@ def normalized_entropy(label, prob, labels=None):
     :param labels: array-like. ラベル. 入力したlabelsに値の欠落がある場合はここで明示する必要あり
     :return: float/
     """
-    return log_loss(label, prob, labels=None) / entropy(label)
+    return log_loss(label, prob, labels=labels, normalize=True) / entropy(label)
 
 
 def relative_information_gain(label, prob, labels=None):
@@ -71,10 +71,10 @@ def relative_information_gain(label, prob, labels=None):
 
     Returns: float
     """
-    return 1 - log_loss(label, prob, labels=None)/entropy(label)
+    return 1 - log_loss(label, prob, labels=labels, normalize=True)/entropy(label)
 
 
-def negative_relative_information_gain(label, prob):
+def negative_relative_information_gain(label, prob, labels=None):
     """
     負の相対情報ゲイン(RIG)を計算する.
     log-loss/mean-entropy - 1
@@ -83,14 +83,15 @@ def negative_relative_information_gain(label, prob):
     Args:
         label:
         prob:
+        labels: array-like. ラベル. 入力したlabelsに値の欠落がある場合はここで明示する必要あり
 
     Returns:
 
     """
-    return log_loss(label, prob)/entropy(label) - 1
+    return log_loss(label, prob, labels=labels, normalize=True)/entropy(label) - 1
 
 
-def normalized_log_loss(label, prob):
+def normalized_log_loss(label, prob, labels=None):
     """
     正規化対数損失 (normalized log loss; NLL) の計算.
     NLL := 1 - (log loss) / (mean entropy)
@@ -106,7 +107,7 @@ def normalized_log_loss(label, prob):
     “Sources of Variability in Large-Scale Machine Learning Systems.,”
     In Machine Learning Systems (NIPS 2015 Workshop). http://learningsys.org/2015/papers.html.
     """
-    return 1 - log_loss(label, prob) / entropy(label)
+    return 1 - log_loss(label, prob, labels=labels, normalize=True) / entropy(label)
 
 
 def expected_calibration_error(y_true, y_pred, m=10,
