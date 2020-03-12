@@ -43,7 +43,7 @@ def entropy(p):
     return - (p * np.log(p) + (1 - p) * np.log(1 - p))
 
 
-def normalized_entropy(label, prob):
+def normalized_entropy(label, prob, labels=None):
     """
     正規化クロスエントロピー(NE)を計算する
     compute the Normalized cross entropy (NE)
@@ -52,12 +52,13 @@ def normalized_entropy(label, prob):
 
     :param label: array-like.
     :param prob: array-like.
+    :param labels: array-like. ラベル. 入力したlabelsに値の欠落がある場合はここで明示する必要あり
     :return: float/
     """
-    return log_loss(label, prob) / entropy(label)
+    return log_loss(label, prob, labels=None) / entropy(label)
 
 
-def relative_information_gain(label, prob):
+def relative_information_gain(label, prob, labels=None):
     """
     相対情報ゲイン(RIG)を計算する
     compute the relative information gain (RIG)
@@ -66,10 +67,11 @@ def relative_information_gain(label, prob):
     Args:
         label: array-like.
         prob: array-like.
+        labels: array-like. ラベル. 入力したlabelsに値の欠落がある場合はここで明示する必要あり
 
     Returns: float
     """
-    return 1 - log_loss(label, prob)/entropy(label)
+    return 1 - log_loss(label, prob, labels=None)/entropy(label)
 
 
 def negative_relative_information_gain(label, prob):
