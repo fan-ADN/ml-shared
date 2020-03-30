@@ -62,7 +62,7 @@ def relative_information_gain(label, prob, labels=None):
     """
     相対情報ゲイン(RIG)を計算する
     compute the relative information gain (RIG)
-     1 - log-loss/mean-entropy
+    RIG = 1 - log-loss/mean-entropy
     ゼロが基準であり, 値が**大きい**ほど当てはまりが良い
     Args:
         label: array-like.
@@ -77,7 +77,7 @@ def relative_information_gain(label, prob, labels=None):
 def negative_relative_information_gain(label, prob, labels=None):
     """
     負の相対情報ゲイン(RIG)を計算する.
-    log-loss/mean-entropy - 1
+    nRIG = log-loss/mean-entropy - 1
     = NE - 1
     ゼロが基準であり, 値が**小さい**ほど当てはまりが良い
     Args:
@@ -159,7 +159,7 @@ def integrated_calibration_index(y, p, **args):
 def integrated_calibration_index_mod(y, p):
     """
     local reg 使うバージョン
-    TOOD: statsmodels.nonparametric.kernel_regression.KernReg がとても遅い
+    TOOD: statsmodels.nonparametric.kernel_regression.KernReg がとても遅い. C++とかで実装したほうが良いのでは?
     """
     ll = KernelReg(endog=y, exog=p, reg_type='ll', var_type='o')
     return mean_absolute_error(y, ll.fit()[0])
