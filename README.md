@@ -3,9 +3,18 @@
 
 # インストール方法
 
+特定のリリースをインストール:
+
 ```bash
 git clone hogehoge; cd hogehoge
 pip install -U dist/ml_shared-*.zip
+```
+
+リポジトリの最新版をインストールする
+
+```bash
+git clone hogehoge; cd hogehoge
+pip install -U .
 ```
 
 # 使い方
