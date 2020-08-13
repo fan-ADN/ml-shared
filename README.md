@@ -13,9 +13,11 @@ pip install -U dist/ml_shared-<バージョン>.zip
 リポジトリの最新版をインストールする
 
 ```bash
-git clone hogehoge; cd hogehoge
-pip install -U .
+pip install -U git+https://github.com/fan-ADN/ml-shared.git@master
 ```
+
+(`pip` で Git 扱う方法は https://pip.pypa.io/en/stable/reference/pip_install/#git を参考に)
+
 
 # 使い方
 
