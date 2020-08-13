@@ -7,7 +7,7 @@
 
 ```bash
 git clone hogehoge; cd hogehoge
-pip install -U dist/ml_shared-*.zip
+pip install -U dist/ml_shared-<バージョン>.zip
 ```
 
 リポジトリの最新版をインストールする
