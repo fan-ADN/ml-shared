@@ -28,7 +28,7 @@ from ml_shared.evalutaion import *
 # メンテ
 新しい `FUGA.py` ファイル追加した場合, 配置ディレクトリ `HOGE` の `__init__.py` に
 
-```python``
+```python
 from HOGE.FUGA import (...)
 ```
 
