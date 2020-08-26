@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 if __name__ == '__main__':
     setup(
         name='ml_shared',
-        version='0.1.5',
+        version='0.1.6',
         url='https://github.com/fan-ADN/ml-shared',
         license='Confidential',
         author='s_katagiri',
