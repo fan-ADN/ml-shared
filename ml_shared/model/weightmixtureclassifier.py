@@ -1,7 +1,6 @@
 import numpy as np
 from scipy.special import expit
 from sklearn.base import clone
-from imblearn.pipeline import Pipeline
 from sklearn.ensemble import BaggingClassifier
 from sklearn.base import BaseEstimator, ClassifierMixin
 import warnings
