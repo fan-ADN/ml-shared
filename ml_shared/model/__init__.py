@@ -6,3 +6,6 @@ from ml_shared.model.fmwrapper import (
 from ml_shared.model.imblearn_reacalibrator import (
     imblearn_recalibrator
 )
+from ml_shared.model.weightmixtureclassifier import (
+    WeightMixtureClassifier
+)
