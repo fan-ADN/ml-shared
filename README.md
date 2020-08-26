@@ -3,14 +3,15 @@
 
 # インストール方法
 
-特定のリリースをインストール:
+* 特定のリリースをインストール:
+
+適当なバージョンをダウンロードして
 
 ```bash
-git clone hogehoge; cd hogehoge
 pip install -U dist/ml_shared-<バージョン>.zip
 ```
 
-リポジトリの最新版をインストールする
+* リポジトリの最新版をインストール:
 
 ```bash
 pip install -U git+https://github.com/fan-ADN/ml-shared.git@master
@@ -24,7 +25,6 @@ pip install -U git+https://github.com/fan-ADN/ml-shared.git@master
 大まかに分けて, 以下の4つ
 
 * [`data`](ml_shared/evaluation/README.md): データの取得関係. ほとんどは TD API のラッパーになりそう
-
 * [`feature`](ml_shared/evaluation/README.md):  データの特徴量行列への変換, あるいは特徴量変換
 * [`model`](ml_shared/model/README.md): 予測モデル関係
 * [`evaluation`](ml_shared/evaluation/README.md): 予測モデルの事後評価. 損失の計算やグラフ描画など

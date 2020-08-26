@@ -11,7 +11,6 @@ if __name__ == '__main__':
         author_email='s_katagiri@fancs.com',
         description='',
         packages=find_packages(),
-        # packages=['ml_shared', 'ml_shared.data', 'ml_shared.model', 'ml_shared.feature', 'ml_shared.evaluation'],
         python_requires='>3.0, <4',
         install_requires=[
             'numpy>=1.17.0',
@@ -24,8 +23,8 @@ if __name__ == '__main__':
         ],
         classifiers=[
             'Programming Language :: Python :: 3',
-            'Programming Language :: Python :: 3.5',
             'Programming Language :: Python :: 3.6',
-            'Programming Language :: Python :: 3.7'
+            'Programming Language :: Python :: 3.7',
+            'Programming Language :: Python :: 3.8'
         ]
     )
