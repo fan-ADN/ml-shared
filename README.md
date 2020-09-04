@@ -46,3 +46,6 @@ from HOGE.FUGA import (...)
 ```
 
 と書いておく.
+
+
+基本的に `working` ブランチで作業して安定したら `master` にマージしています
