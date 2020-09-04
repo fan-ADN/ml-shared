@@ -6,7 +6,7 @@ scikit-learn の estimator 準拠, もしくは修正版クラス
 
 `fasFM.asl.FMClassification` に対応.
 
-fastFM (`https://github.com/ibayer/fastFM`) の scikit-learn 風インターフェイスのラッパ. 本家でも scikit-kearn API を提供すると言っているが微妙に違うので修正.
+fastFM (https://github.com/ibayer/fastFM) の scikit-learn 風インターフェイスのラッパ. 本家でも scikit-kearn API を提供すると言っているが微妙に違うので修正.
 例えば:
 * `y` を [1, -1] しか受け付けない
 * `.predixct_proba()` が1列しか返さない
