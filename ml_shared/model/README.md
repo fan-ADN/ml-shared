@@ -23,3 +23,7 @@ fastFM (`https://github.com/ibayer/fastFM`) の scikit-learn 風インターフ�
 ### WeightMixtureClassifier
 
 weight mixing 用クラス. 現在の実装では2値分類にしか対応していないし, 分散処理によるパフォーマンス向上も見込めない
+
+### ImblernReCalibrator
+
+不均衡リサンプリングの事後補正. ただし分類以外に役に立つのかは自明でない

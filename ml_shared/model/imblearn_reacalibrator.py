@@ -24,7 +24,7 @@ def get_oversampling_power(post_positive_rate, pos_rate):
     """
     return get_oversampling_rate(post_positive_rate) * (1 - pos_rate) / pos_rate
 
-class imblearn_recalibrator(BaseEstimator, ClassifierMixin):
+class ImblearnRecalibrator(BaseEstimator, ClassifierMixin):
     """
     imblearnのリサンプリングの偏りを再較正するやつ
     再較正のコードを毎回書きたくない. scikit-learnの設計思想に則りオブジェクト指向プログラミングをしよう

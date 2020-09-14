@@ -4,7 +4,7 @@ from ml_shared.model.fmwrapper import (
     FastFMMCMCClassifier
 )
 from ml_shared.model.imblearn_reacalibrator import (
-    imblearn_recalibrator
+    ImblearnRecalibrator
 )
 from ml_shared.model.weightmixtureclassifier import (
     WeightMixtureClassifier
