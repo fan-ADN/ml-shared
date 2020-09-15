@@ -61,7 +61,7 @@ calculate integrated calibration index (ICI) suggested by:
 
 ### print_metrics
 
-display glavnie metrics for multiple inputs (e.g., train/test data).
+display essential metrics for multiple inputs (e.g., train/test data).
 
 
 ### plot_ROC
