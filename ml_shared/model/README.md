@@ -22,7 +22,7 @@ fastFM (`https://github.com/ibayer/fastFM`) の scikit-learn 風インターフ�
 
 ### WeightMixtureClassifier
 
-weight mixing 用クラス. 現在の実装では2値分類にしか対応していないし, 分散処理によるパフォーマンス向上も見込めない
+weight mixing 用クラス. 現在の実装では2値分類にしか対応していないし, 分散処理によるパフォーマンス向上も見込めない, 動作確認用.
 
 参考: Mann, G. S., McDonald, R., Mohri, M., Silberman, N., & Walker, D. (2009). "_Efficient large-scale distributed training of conditional maximum entropy models_," Advances in neural information processing systems (NIPS) 22 (pp. 1231–1239). available at [here](https://papers.nips.cc/paper/3881-efficient-large-scale-distributed-training-of-conditional-maximum-entropy-models)
 
