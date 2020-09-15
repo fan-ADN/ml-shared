@@ -36,7 +36,7 @@ calculate the normalized (cross) entropy suggested by:
 ### normalized_log_loss
 正規化対数損失の計算. 定義はRIGと全く同じ.
 
-Lefortier, Damien, Anthony Truchet, and Maarten de Rijke. 2015. “Sources of Variability in Large-Scale Machine Learning Systems.” In Machine Learning Systems (NIPS 2015 Workshop). http://learningsys.org/2015/papers.html.
+Lefortier, Damien, Anthony Truchet, and Maarten de Rijke. 2015. “Sources of Variability in Large-Scale Machine Learning Systems.” In Machine Learning Systems (NIPS 2015 Workshop). [here](http://learningsys.org/2015/papers.html).
 
 
 ### expected_calibration_error
@@ -46,7 +46,7 @@ Lefortier, Damien, Anthony Truchet, and Maarten de Rijke. 2015. “Sources of Va
 
 calculate Hozmer-Lemeshaw-statistics (calibration curve) -based metric, inspired by:
 
-* Guo, Chuan, Geoff Pleiss, Yu Sun, and Kilian Q. Weinberger. (2017) “_On Calibration of Modern Neural Networks_.” In Proceedings of the 34th International Conference on Machine Learning, 70:1321–30. Sydney, NSW, Australia. URL: https://dl.acm.org/citation.cfm?id=3305518, arXiv: [1706.04599](http://arxiv.org/abs/1706.04599).
+* Guo, Chuan, Geoff Pleiss, Yu Sun, and Kilian Q. Weinberger. (2017) “_On Calibration of Modern Neural Networks_.” In Proceedings of the 34th International Conference on Machine Learning, 70:1321–30. Sydney, NSW, Australia. URL: [here](https://dl.acm.org/citation.cfm?id=3305518), arXiv: [1706.04599](http://arxiv.org/abs/1706.04599).
 * Naeini, Mahdi Pakdaman, Gregory F. Cooper, and Milos Hauskrecht. (2015) “_Obtaining Well Calibrated Probabilities Using Bayesian Binning_.” in Proceedings of the AAAI Conference on Artificial Intelligence, 2901–7, PMID: [25927013](https://europepmc.org/abstract/med/25927013)
 
 ### integrated_calibration_index
@@ -60,6 +60,7 @@ calculate integrated calibration index (ICI) suggested by:
 
 
 ### print_metrics
+
 display glavnie metrics for multiple inputs (e.g., train/test data).
 
 
