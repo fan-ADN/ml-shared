@@ -19,6 +19,8 @@ calibrate probability estimates for imbalanced data, suggested by the followings
 * He, X. et al., “Practical Lessons from Predicting Clicks on Ads at Facebook,” in Proceedings of 20th ACM SIGKDD Conference on Knowledge Discovery and Data Mining - ADKDD’14, 2014, pp. 1–9. DOI: [10.1145/2648584.2648589](https://doi.org/10.1145/2648584.2648589)
 * Dal Pozzolo, A., O. Caelen, and G. Bontempi, “When is Undersampling Effective in Unbalanced Classification Tasks?,” in Proceedings of the 2015th European Conference on Machine Learning and Knowledge Discovery in Databases, Porto, Portugal, 2015, vol. 9284, pp. 200–215. DOI: [10.1007/978-3-319-23528-8_13](https://doi.org/10.1007/978-3-319-23528-8_13)
 
+注: `models.ImblearnRecalibrator` は resampler とこの関数による再補正を内蔵した `estimator` 版
+
 
 ### normalized_entropy, relative_information_gain
 それぞれ正規化エントロピー (NE; Normalized cross Entropy), 相対情報ゲイン(RIG) の計算
@@ -30,7 +32,7 @@ RIG = 1 - (log-loss)/(mean-entropy)
 calculate the normalized (cross) entropy suggested by:
 
 * He, X. et al., “Practical Lessons from Predicting Clicks on Ads at Facebook,” in Proceedings of 20th ACM SIGKDD Conference on Knowledge Discovery and Data Mining - ADKDD’14, 2014, pp. 1–9. DOI: [10.1145/2648584.2648589](https://doi.org/10.1145/2648584.2648589)
-* Yi, J. , Y. Chen, J. Li, S. Sett, and T. W. Yan (2013) “_Predictive model performance: offline and online evaluations_,” in Proceedings of the 19th ACM SIGKDD international conference on Knowledge discovery and data mining - KDD ’13, New York, New York, USA, p. 1294. DOi: [10.1145/2487575.2488215](https://doi.org/10.1145/2487575.2488215)
+* Yi, J. , Y. Chen, J. Li, S. Sett, and T. W. Yan (2013) “_Predictive model performance: offline and online evaluations_,” in Proceedings of the 19th ACM SIGKDD international conference on Knowledge discovery and data mining - KDD ’13, New York, New York, USA, p. 1294. DOI: [10.1145/2487575.2488215](https://doi.org/10.1145/2487575.2488215)
 
 
 ### normalized_log_loss
