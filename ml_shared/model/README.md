@@ -6,7 +6,7 @@ scikit-learn の estimator 準拠, もしくは修正版クラス
 
 `fasFM.asl.FMClassification` に対応.
 
-fastFM (`https://github.com/ibayer/fastFM`) の scikit-learn 風インターフェイスのラッパ. 本家でも scikit-kearn API を提供すると言っているが微妙に違うので修正.
+fastFM (https://github.com/ibayer/fastFM) の scikit-learn 風インターフェイスのラッパ. 本家でも scikit-kearn API を提供すると言っているが微妙に違うので修正.
 例えば:
 * `y` を [1, -1] しか受け付けない
 * `.predixct_proba()` が1列しか返さない
@@ -27,3 +27,4 @@ weight mixing 用クラス. 現在の実装では2値分類にしか対応して
 ### ImblernRecalibrator
 
 不均衡リサンプリングの事後補正. ただし分類以外に役に立つのかは自明でない
+参考: Mann, G. S., McDonald, R., Mohri, M., Silberman, N., & Walker, D. (2009). "_Efficient large-scale distributed training of conditional maximum entropy models_," Advances in neural information processing systems (NIPS) 22 (pp. 1231–1239). https://papers.nips.cc/paper/3881-efficient-large-scale-distributed-training-of-conditional-maximum-entropy-models
