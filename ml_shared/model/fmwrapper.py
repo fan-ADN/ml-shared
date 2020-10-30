@@ -34,16 +34,3 @@ class FastFMSGDClassifier(sgd.FMClassification):
         p = super().predict_proba(X)
         return np.column_stack((1 - p, p))
 
-
-class FastFMMCMCClassifier(mcmc.FMClassification):
-    def fit(self, X, y):
-        classes_ = np.unique(y)
-        y = 2 * (classes_[1] == y) - 1
-        super().fit(X, y)
-        self.classes_ = classes_
-        return self
-
-    def predict_proba(self, X):
-        p = super().predict_proba(X)
-        return np.column_stack((1 - p, p))
-
