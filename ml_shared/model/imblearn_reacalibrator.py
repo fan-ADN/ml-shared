@@ -34,7 +34,7 @@ class ImblearnRecalibrator(BaseEstimator, ClassifierMixin):
     :param estimatror: scikit-learn API 準拠の estimator オブジェクト
     :param resampler: imblearn で使われる各種 resampler オブジェクト
     :param post_minor_rate: リサンプリング後の**全件に対する少数例の割合**を指定. default is None. alpha とどちらか片方を使う.
-    :param alpha: **リサンプリング前に対する**事後の少数例の割合**を指定. default is 'auto'. post_minor_rate とどちらか片方を使う.
+    :param alpha: **リサンプリング前に対する事後の少数例の割合**を指定. default is 'auto'. post_minor_rate とどちらか片方を使う.
     """
     def __init__(self, estimator, resampler, alpha='auto', post_minor_rate=None):
         resampler = clone(resampler)
@@ -70,5 +70,10 @@ class ImblearnRecalibrator(BaseEstimator, ClassifierMixin):
     def predict(self, X):
         return self.estimator_.predict(X)
     def predict_proba(self, X):
+        if self.alpha == 'auto':
+            alpha = 0.5
+        else:
+            alpha = self.alpha
+        print(alpha)
         return calibrate_imbalanceness(self.estimator_.predict_proba(X),
-         pos_rate=get_oversampling_power(self.alpha, self.minor_rate_))
+         pos_rate=get_oversampling_power(alpha, self.minor_rate_))
