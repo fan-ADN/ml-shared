@@ -5,7 +5,7 @@ import numpy as np
 import scipy as sp
 from sklearn.base import BaseEstimator, ClassifierMixin, clone
 from sklearn.utils.validation import check_is_fitted
-from sklearn.utils import check_array, safe_indexing
+from sklearn.utils import check_array
 from sklearn.preprocessing import FunctionTransformer
 
 
